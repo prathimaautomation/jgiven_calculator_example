@@ -12,6 +12,6 @@ public class CalculatorUnitTests {
 
     @Test
     public void testAddition(){
-        assertEquals(5, calculator.addition(2,2));
+        assertEquals(4, calculator.addition(2,2));
     }
 }
