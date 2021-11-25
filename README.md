@@ -38,3 +38,4 @@ you will find a JSON report for JGiven output:
 
 `jgiven-reports/TestCalculatorJgiven.json`
 
+**First iteration of Jenkins test**
