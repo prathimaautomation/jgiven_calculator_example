@@ -46,8 +46,8 @@ Editable Email Notification: Recipient List: PJoginipelly@spartaglobal.com
 Click on Apply and Save
 ```
 - Create a third job in Jenkins to build a Docker Image and push it to your Docker Hub account, create a webhook on Docker Hub that would send the notification email every time new image is pushed to Docker Hub
-`created a jenkins job "prathima-dockerImage" to build a docker image from the gitHub project repo and push the docker image onto the dockerHub`
-```prathima-merge
+`created a jenkins job "prathima-DImage" to build a docker image from the gitHub project repo and push the docker image onto the dockerHub`
+```prathima-DImage
 GitHub project: `https://github.com/prathimaautomation/jgiven_calculator_example.git` (enter HTTP url from gitHUB project repo)
 Source Code Management: select `Git`, Repository URL: git@github.com:prathimaautomation/jgiven_calculator_example.git (SSH URL from github repository)
 Credentials: `prathima-project1` (private ssh key)
@@ -61,10 +61,5 @@ Build: Execute shell: Command:
               Repository Name: pjoginipelly/jgiven_calculator
               Docker Host URI: unix:///var/run/docker.sock
 
-        
-Post-build Actions: 
-Git Publisher: select `Merge Results` 
-
-Editable Email Notification: Recipient List: PJoginipelly@spartaglobal.com
 Click on Apply and Save
 ```
