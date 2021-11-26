@@ -1,5 +1,5 @@
 FROM openjdk:12-jdk-alpine
-COPY .* /app
+COPY . /app
 
 #FROM gradle:4.7.0-jdk8-alpine AS build
 #COPY --chown=gradle:gradle . /home/gradle
