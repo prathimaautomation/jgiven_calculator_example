@@ -46,13 +46,21 @@ Editable Email Notification: Recipient List: PJoginipelly@spartaglobal.com
 Click on Apply and Save
 ```
 - Create a third job in Jenkins to build a Docker Image and push it to your Docker Hub account, create a webhook on Docker Hub that would send the notification email every time new image is pushed to Docker Hub
-`created a jenkins job "prathima-DImage" to build a docker image from the gitHub project repo and push the docker image onto the dockerHub`
+- first step: we have to create a Dockerfile to build an image
+```Dockerfile
+FROM openjdk:12-jdk-alpine
+COPY * /app/
+```
+- second step: create a new webhook on Dockerhub for this image `jgiven_calculator` and add an email notification to send as soon as there is a new docker image is pushed
+
+ 
+- third step: created a jenkins job "prathima-DImage" to build a docker image from the gitHub project repo and push the docker image onto the dockerHub`
 ```prathima-DImage
 GitHub project: `https://github.com/prathimaautomation/jgiven_calculator_example.git` (enter HTTP url from gitHUB project repo)
 Source Code Management: select `Git`, Repository URL: git@github.com:prathimaautomation/jgiven_calculator_example.git (SSH URL from github repository)
 Credentials: `prathima-project1` (private ssh key)
 Branches to build: Branch Specifier: */main
-Build Triggers: select `GitHub hook trigger for GITScm polling`
+Build Triggers: select `GitHub hook trigger for GITScm polling` - this is optional
 
 Build: Execute shell: Command:
               sudo docker build . -t pjoginipelly/jgiven_calculator
@@ -60,6 +68,6 @@ Build: Execute shell: Command:
        Docker Build and Publish:
               Repository Name: pjoginipelly/jgiven_calculator
               Docker Host URI: unix:///var/run/docker.sock
-
+              Registry credentials: pjoginipelly/***** (Dockerhub username & password added)
 Click on Apply and Save
 ```
