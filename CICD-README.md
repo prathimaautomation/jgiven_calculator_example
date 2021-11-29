@@ -53,7 +53,6 @@ COPY * /app/
 ```
 - second step: create a new webhook on Dockerhub for this image `jgiven_calculator` and add an email notification to send as soon as there is a new docker image is pushed
 
- 
 - third step: created a jenkins job "prathima-DImage" to build a docker image from the gitHub project repo and push the docker image onto the dockerHub`
 ```prathima-DImage
 GitHub project: `https://github.com/prathimaautomation/jgiven_calculator_example.git` (enter HTTP url from gitHUB project repo)
